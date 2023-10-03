@@ -1,4 +1,4 @@
-# Projet web 2023 - Groupe XX
+# Projet web 2023 - Groupe 38
 
 Ce repository GitHub reprend le boilerplate du code de votre projet web, ou la base à partir de laquelle vous allez déveloper.
 
