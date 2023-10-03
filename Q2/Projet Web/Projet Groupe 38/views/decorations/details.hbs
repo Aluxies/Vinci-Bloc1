@@ -1,0 +1,89 @@
+<section>
+
+    <div id="decorations-background"></div>
+
+    <div id="decorations-details">
+
+        <table>
+
+            <tbody>
+
+                <tr>
+                    <td id="image-data" rowspan="4">
+                        <img src="/images/{{decoration.picture_path}}" alt="image" width="250" height="250">
+                    </td>
+                    <td id="title-data">
+                        <h3>{{decoration.name}}  |  {{decoration.price}}€</h3>
+                    </td>
+                        
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <hr>
+                    
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <p id="description-paragraph">
+                            {{decoration.description}}
+                        </p>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <hr>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        {{#if @root.session.user}}
+
+                        <form method="post" action="/decorations/favorite">
+
+                            <input name="decoration_id" type="hidden" value="{{decoration.decoration_id}}">
+                            <input name="page" type="hidden" value="details">
+                        
+                            {{#if decoration.isFavorite}}
+
+                                <p> <input type="submit" style="background-image: url('/images/decorations/star.png');" id="favorite-button" value=""> Retirer des favoris</p>
+
+                                {{else}}
+                            
+                                <p> <input type="submit" id="favorite-button" value=""> Mettre en favori</p>
+
+                            {{/if}}
+
+                        </form>
+                        
+                        {{/if}}
+                    
+                    </td>
+                
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+
+</section>

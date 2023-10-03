@@ -1,0 +1,65 @@
+<section>
+
+    <h2 class="titre-exoplanetes"> Détails d&rsquo;une Exoplanète</h2>
+
+    {{#if messageErreur}}
+
+        {{#if couleurEstJaune}}
+
+            <div id="div-color-yellow">
+
+                {{messageErreur}}
+
+            </div>
+
+        {{/if}}
+
+        {{#if couleurEstRouge}}
+
+            <div id="div-color-red">
+
+                {{messageErreur}}
+                
+            </div>
+
+        {{/if}}
+
+    {{else}}
+
+        <table class="table-exoplanetes">
+
+        <thead>
+
+            <tr>
+
+                <th>ID Exoplanète</th>
+                <th>Nom Exoplanète</th>
+                <th>hClass</th>
+                <th>Année de découverte</th>
+                <th>IST</th>
+                <th>pClass</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td> {{ exoplanete.id }} </td>
+                <td> {{ exoplanete.uniqueName }} </td>
+                <td> {{ exoplanete.hClass }} </td>
+                <td> {{ exoplanete.discoveryYear }} </td>
+                <td> {{ exoplanete.IST }} </td>
+                <td> {{ exoplanete.pClass }} </td>
+
+            </tr>
+
+        </tbody>
+
+        </table>
+
+    {{/if}}
+
+</section>

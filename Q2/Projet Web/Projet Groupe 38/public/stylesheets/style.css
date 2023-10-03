@@ -1,0 +1,974 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+height: 100%;
+min-height: 100%;
+}
+
+      /*  ===== HEADER =====  */
+/* whole navbar*/
+header nav{
+  background: linear-gradient(rgb(224, 110, 68),coral);
+  margin:0px;
+  padding:0px;
+  height: 60px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-bottom: 2px solid rgb(128, 51, 23);
+}
+header nav ul li{
+  display: inline-block;
+  padding: 15px;
+  margin-top:3px;
+}
+
+.headerNavText{
+  text-decoration: none;
+  color:black;
+  font-size: 22px;
+  transition: 0.3s;
+  letter-spacing: normal;
+}
+
+.headerNavText:hover{
+color: rgb(120, 52, 28);
+letter-spacing: 0.5px;
+font-size: 25px;
+}
+
+/* Hoverable user menu in header, button appearance*/
+.userMenu {
+  z-index:5;
+  padding: 0px;
+  font-size: 16px;
+  position: absolute;
+  float:right;
+  top:0px;
+  right:0px;
+}
+/*User image button resize*/
+.userButton{
+  background: url("/images/user_icon.png") center center no-repeat;
+  background-size: 50px;
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  margin:5px;
+}
+/* Hoverable user menu, hidden by default when not hovered */
+.userMenuContent{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  right:0;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+/* Links inside the user menu */
+.userMenuContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+}
+/* Change color of a link in user menu when hovered */
+.userMenu a:hover, .userMenu a:hover {background-color: #ddd;}
+/* Display the user menu when the button is hovered */
+.userMenu:hover .userMenuContent {display: block;}
+
+/* ClassyHouse logo */
+#logo{
+width: 70px;
+height: 63px;
+margin-left: 30px;
+margin-right: 30px;
+float:left;
+}
+
+      /* END OF HEADER */
+
+
+/* START HOMEPAGE */
+ /* === main title with name and slogan */
+.maintitle{
+text-align: center;
+margin-top: 0px;
+font-size:40px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+background-image: url("../images/homepage/background.png");
+width: 100%;
+height: 350px;
+background-size: 100% 150%;
+color:white;
+border-bottom: 7px solid coral;
+}
+
+.titleText{
+padding: 95px;
+text-shadow: 2px 2px 10px #000000;
+font-size: 60px;
+}
+  /* ======= */
+
+.homeDescription{
+margin-top: 80px;
+font-size: 200%;
+padding-right: 380px;
+margin-left: 30px;
+margin-bottom: 100px;
+font-family:'Times New Roman', Times, serif;
+font-style:italic;
+}
+.homeMap{
+width: 250px;
+height: 250px;
+position: absolute;
+right: 8%;
+top:480px;
+box-shadow: 2px 2px 10px #000000;
+}
+
+.homeStats{
+display: flex;
+justify-content: space-between;
+margin-top:30px;
+margin-left:auto;
+margin-right: auto;
+text-align: center;
+width: 90%;
+font-size: 30px;
+font-weight: bold;
+}
+
+.hr{
+  opacity: 1;
+  background-color: #000000;
+  height: 2px;
+}
+
+.teamPresentation{
+  display: flex;
+  justify-content: space-between;
+  margin-top:80px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  font-size: 30px;
+  font-weight: bold;
+  }
+
+  .teamPresentation div img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+  }
+
+  .teamPresentationTitle{
+    text-align: center;
+    font-weight: bold;
+    margin-top:50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+    font-size:45px;
+  }
+
+
+/* END OF HOMEPAGE  */
+
+
+
+
+
+
+/*  ===== FOOTER =====  */
+footer{
+height:80px;
+width: 100%;
+background: linear-gradient(coral, rgb(183, 72, 32));
+border-top: 2px solid rgb(128, 51, 23);
+position: relative;
+}
+
+footer p{
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 0px;
+}
+/*  ===== END OF FOOTER =====  */
+
+
+/* LOGIN PAGE AND REGISTER PAGE  */
+.container {
+display: flex;
+justify-content: center;
+}
+
+
+.userForm{
+border-radius: 4% 0% 0% 4%;
+margin-top: 100px;
+margin-bottom: 100px;
+margin-right: 0px;
+width: 600px;
+height: 500px;
+display:block;
+background-color: rgb(192, 114, 86);
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+text-align: right;
+}
+
+.userForm h2 {
+padding-left: 190px;
+font-size: 33px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+margin-top: 20px;
+text-align: left;
+}
+
+.userForm .label{
+display: inline-block;
+font-size: large;
+margin: 15px;
+margin-right: 150px;
+}
+
+.userForm input{
+width: 200px;
+margin-left: 5px;
+height: 30px;
+text-align: left;
+}
+.userFormImg{
+height: 501px;
+margin-top:100px;
+border-radius: 0% 4% 4% 0%;
+}
+.userForm .submit{
+width: 200px;
+height: 35px;
+font-size: 17px;
+letter-spacing: 1px;
+word-spacing: 2px;
+border: 1px solid black;
+border-radius: 5px;
+position: relative;
+margin-right: 200px;
+margin-top:30px;
+text-align: center;
+}
+.userForm form{
+margin-top: 30px;
+}
+.userFormNames{
+
+font-size: large;
+margin: auto;
+padding-left: 0px;
+width: 550px;
+}
+
+.error{
+height:60px;
+background-color:rgb(228, 68, 68);
+border: 5px solid rgb(156, 42, 42);
+margin-left: 50px;
+width: 500px;
+margin-top: 40px;
+text-align: left;
+}
+
+.error p{
+text-align: center;
+position: relative;
+padding-top: 0px;
+}
+
+.background{
+position:absolute;
+top:0px;
+width: 100%;
+height: 100%;
+z-index: -1;
+background: url("/images/homepage/background.png");
+background-repeat: no-repeat;
+background-size: cover;
+filter: blur(10px);
+}
+
+/* DECORATIONS STYLE */
+
+#decorations-catalogue h3 {
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: #f1f1f1 0px 0px 10px;
+  font-weight: bold;
+
+}
+
+#decorations-catalogue #select {
+
+  outline: none;
+  margin-top: 10px;
+  border-radius: 10px;
+
+}
+
+#decorations-catalogue #data-1 {
+
+  border-right: none;
+
+}
+
+#decorations-catalogue #data-2 {
+
+  border-left: none;
+
+}
+
+#decorations-catalogue table {
+
+  margin: auto;
+  margin-bottom: 200px;
+  border: 1px solid black;
+  border-radius: 20px;
+  border-collapse: collapse;
+
+}
+
+#decorations-catalogue tr {
+
+  text-align: center;
+  background-color: lightgray;
+
+}
+
+#decorations-catalogue th {
+
+  padding: 10px 40px 10px 40px;
+  background-color: grey;
+  margin: 5px;
+
+}
+
+#decorations-catalogue td {
+
+  border: 1px solid black;
+  padding: 10px 15px 10px 15px;
+
+}
+
+#decorations-catalogue #favorite-button {
+
+  border: none;
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+  background-image: url("/images/decorations/star-gray.png");
+
+}
+
+#decorations-details #favorite-button {
+
+  border: none;
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+  background-image: url("/images/decorations/star-gray.png");
+
+}
+
+#decorations-details #image-data {
+
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+
+}
+
+#decorations-details #title-data {
+
+  padding-top: 10px;
+
+}
+
+#decorations-details hr {
+
+  margin: 2px 0px;
+
+}
+
+#decorations-details #description-paragraph {
+  width: 500px;
+
+}
+
+#decorations-details table {
+
+  margin: auto;
+  margin-top: 30px;
+  width: 900px;
+  height: 300px;
+  background-color: lightgray;
+  padding: 20px;
+  margin-bottom: 300px;
+  border-radius: 20px;
+
+}
+
+#decorations-additem {
+
+  justify-self: center;
+  margin:auto;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  border-radius: 4%;
+  width: 600px;
+  height: 500px;
+  display:block;
+  background-color: rgb(192, 114, 86);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#decorations-additem input {
+
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+#decorations-additem textarea {
+
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 10px;
+  resize: none;
+  outline: none;
+
+}
+
+#decorations-additem #submit {
+
+  width: 200px;
+  height: 35px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top:10px;
+  margin-left: 200px;
+
+}
+
+#decorations-additem h3 {
+
+  padding: 15px;
+  text-align: center;
+  font-size: 33px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#decorations-additem label {
+
+  font-size: large;
+  margin: 15px;
+
+}
+
+#decorations-additem table {
+
+  float: left;
+  margin-left: 20px;
+
+}
+
+#decorations-additem .table-label {
+
+  text-align: left;
+  vertical-align: top;
+
+}
+
+#decorations-additem .table-input {
+
+  float: left;
+  margin-left: 20px;
+  margin: 15px;
+
+}
+
+#decorations-background {
+  
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  top:0px;
+  z-index: -1;
+  background: url("/images/decorations/background.png");
+  background-size: cover;
+  filter: blur(10px);
+
+}
+
+#decorations-details #favorite {
+
+  border: none;
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+  background-image: url("/images/decorations/star-gray.png");
+
+}
+
+/* CURTAIN CUSTOMISATION PAGE*/
+.curtainDiv{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 800px;
+  height: 400px;
+  text-align: center;
+  background-color: rgb(232, 109, 65);
+  border-radius: 30px;
+}
+
+.backgroundCurtain{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("/images/curtains/background.png");
+  background-size: cover;
+  filter: blur(10px) contrast(125%);
+  top:0px
+  }
+
+.curtainDiv label, .curtainDiv input{
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-top:8px
+}
+
+.errorCurtain{
+  margin:0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.curtainTable #table{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 1200px;
+  text-align: center;
+}
+
+.curtainTable #table th {
+  padding: 10px 40px 10px 40px;
+  border: 1px solid black;
+  background-color: rgb(241, 119, 75);
+
+}
+.curtainTable #table td {
+  border: 1px solid black;
+  padding: 10px 40px 10px 40px;
+  background: rgb(255, 158, 123);
+}
+
+
+
+/* CURTAIN QUOTATION PAGE */
+
+.curtainQuotation{
+  margin-left: auto;
+  margin-right: auto;
+  background:coral;
+  width: 700px;
+  height: 500px;
+  margin-top:100px;
+  margin-bottom: 100px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.496);
+}
+
+.curtainQuotation h3{
+ padding-top: 20px;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.curtainQuotationColor{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height:31px;
+  border:2px solid rgb(180, 75, 37);
+  background-color: rgb(231, 103, 57);
+}
+
+
+.curtainQuotationSize{
+  display: flex;
+  flex:1;
+  border:2px solid rgb(180, 75, 37);
+  background-color: rgb(231, 103, 57);
+}
+
+.curtainQuotationSize p {
+  margin:15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+
+}
+
+.curtainQuotationOrder {
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(66, 195, 115);
+  height: 50px;
+  width: 230px;
+  border:none;
+  margin-top: 40px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.496);
+}
+
+
+
+      /* ORDER LIST PAGE */
+
+.backgroundOrder{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("/images/orders/background.png");
+  background-size: cover;
+  filter: blur(10px) contrast(125%);
+  top:0px
+}
+
+.orderTitle{
+  margin-top: 140px;
+  text-align: center;
+  word-spacing: 10px;
+}
+
+.orderMenu{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 1000px;
+  background-color: coral;
+  margin-bottom: 130px;
+  border-radius: 35px;
+}
+
+.orderMenuAdmin{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 1400px;
+  background-color: coral;
+  margin-bottom: 130px;
+  border-radius: 35px;
+}
+
+.orderTable{
+  padding: 10px 40px 10px 40px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+      
+.orderTable td {
+  border: 1px solid black;
+  padding: 10px 40px 10px 40px;
+  font-size: 25px;
+  background-color: rgb(225, 120, 82);
+}
+
+.orderId{
+  width: auto;
+}
+
+.orderDate{
+ width: 450px;
+}
+
+.orderDate p{
+  word-spacing: 40px;
+  margin-bottom: 0px;
+}
+
+.order{
+  height: 50px;
+  width: 100px;
+  border: 4px solid;
+}
+
+.orderStatus{
+  line-height: 45px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.orderTh td{
+  background-color: rgb(218, 94, 49) !important;
+}
+
+.orderOpen{
+  background-color: rgb(141, 141, 141);
+  border-color: rgb(110, 110, 110);
+}
+
+.orderPaid{
+  background-color: rgb(95, 159, 205);
+  border-color: rgb(65, 129, 175);
+}
+
+.orderSent{
+  background-color: rgb(45, 190, 72);
+  border-color: rgb(15, 160, 42);
+}
+
+
+
+      /* ORDER LIST PAGE */
+
+.backgroundOrder{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("/images/orders/background.png");
+  background-size: cover;
+  filter: blur(10px) contrast(125%);
+  top:0px
+}
+
+.orderTitle{
+  margin-top: 140px;
+  text-align: center;
+  word-spacing: 10px;
+}
+
+.orderMenu{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 1150px;
+  background-color: coral;
+  margin-bottom: 220px;
+  margin-top:220px;
+  border-radius: 35px;
+}
+
+.orderMenuAdmin{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 1400px;
+  background-color: coral;
+  margin-bottom: 130px;
+  border-radius: 35px;
+}
+
+.orderTable{
+  padding: 10px 40px 10px 40px;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+      
+.orderTable td {
+  border: 1px solid black;
+  padding: 10px 40px 10px 40px;
+  font-size: 25px;
+  background-color: rgb(225, 120, 82);
+}
+
+.orderId{
+  width: auto;
+}
+
+.orderDate{
+ width: 450px;
+}
+
+.orderDate p{
+  word-spacing: 40px;
+  margin-bottom: 0px;
+}
+
+.order{
+  height: 50px;
+  width: 100px;
+  border: 4px solid;
+}
+
+.orderStatus{
+  line-height: 45px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.orderTh td{
+  background-color: rgb(218, 94, 49) !important;
+}
+
+.orderSubmit{
+  font-size: 20px;
+  padding: 5px;
+  border: 4px solid;
+}
+
+.orderOpen{
+  background-color: rgb(141, 141, 141);
+  border-color: rgb(110, 110, 110);
+}
+
+.orderPaid{
+  background-color: rgb(95, 159, 205);
+  border-color: rgb(65, 129, 175);
+}
+
+.orderSent{
+  background-color: rgb(45, 190, 72);
+  border-color: rgb(15, 160, 42);
+}
+
+.orderSubmitOpen{
+  background-color: rgb(95, 159, 205);
+  border-color: rgb(65, 129, 175);
+}
+
+.orderSubmitPaid{
+  background-color: rgb(45, 190, 72);
+  border-color: rgb(15, 160, 42);
+}
+
+
+/* END OF ORDERS PAGE*/
+
+/* TICKETS PAGE */
+
+.createTicketButton{
+  background-color: rgb(95, 159, 205);
+  font-size: 20px;
+  padding: 5px;
+  border: 4px solid rgb(73, 144, 194);
+  margin-left: 25%;
+  height: 45px;
+  width: 150px;
+  font-size: 23px;
+  line-height: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.ticketCreateTitle{
+  text-align: center;
+}
+
+.bg-secondary-subtle div label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.ticketMessageForm{
+  margin-bottom: 10px;
+}
+
+.bg-secondary-subtle{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.discussion{
+  padding:10px;
+  padding-right: 200px;
+}
+
+.tableDiscussion{
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.sendMessage{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sendMessage input[type=textarea]{
+  width: 500px;
+  height: 45px;
+  background-color: #ffffff;
+  border-color: #a7a7a7;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.sendMessageButton{
+  background-color: rgb(95, 159, 205);
+  font-size: 20px;
+  padding: 5px;
+  border: 4px solid rgb(73, 144, 194);
+  height: 45px;
+  width: 150px;
+  font-size: 23px;
+  line-height: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+.ticketText{
+  color: black;
+  text-shadow: 2px 1px 3px white;
+}
+
+
+.ticketImage{
+  margin-left: 6%;
+}
+
+.closeTicket{
+  float: right;
+  background-color: red;
+  border: 4px solid rgb(119, 1, 1);
+}
+ .op{
+  height: 10%;
+  width: 26%;
+  margin-left: 4%;
+ }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Site des Exoplanètes</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <img src="/images/logo.png" alt="logo">
+    <nav>
+      <ul>
+        <li> <a href="/"> Accueil</a> </li>
+        <li> <a href="/exoplanets"> Exoplanètes</a> </li>
+        <li> <a href="/exolunes"> Exolunes</a> </li>
+        <li> <a href="/forum"> Forum de discussion</a> </li>
+        <li> <a target="_blank" href="http://ochoquet.be/syllabusWeb1/Syllabus_Web1.html#/"> Syllabus Web1</a> </li>
+        <div id="register-login">
+          {{#if session.user}}
+            <form action="/users/logout" method="post">
+
+              <input type="submit" value="Se déconnecter">
+
+            </form>
+          {{else}}
+            <li> <a href="/users/register">S&rsquo;enregister</a> </li>
+            <li> <a href="/users">Se connecter</a> </li>
+          {{/if}}
+        </div>
+      </ul>
+    </nav>
+  </header>
+  {{{body}}}
+  <footer>
+    Site sponsorisé par Exo1000.
+  </footer>
+</body>
+
+</html>

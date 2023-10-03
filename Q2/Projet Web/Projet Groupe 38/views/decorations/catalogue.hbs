@@ -1,0 +1,110 @@
+<section>
+
+    <div id="decorations-background"></div>
+
+    <div id="decorations-catalogue">
+
+    <h3>Notre catalogue de décorations d&rsquo;intérieur</h3>
+        
+    <table>
+
+        <thead>
+
+            <tr>
+                <form method="post" action="/decorations/sortPriceDate">
+                <th>
+                    <p>
+                        <select id="select" name="sort">
+
+                            <option value="mostExpensive">Du plus cher au moins cher</option>
+                            <option value="lessExpensive">Du moins cher au plus cher</option>
+                            <option value="mostRecent">Du plus récent au plus vieux</option>
+                            <option value="lessRecent">Du plus vieux au plus récent</option>
+
+                        </select>
+
+                    </p>
+
+                </th>
+            
+                <th>
+
+                    <input type="submit" value="Trier">
+
+                </th>
+
+                </form>
+                <th colspan="2">
+                    {{#if @root.session.user}}
+                    <form method="post" action="/decorations/filterFavorite">
+
+                        <input type="submit" value="Filtrer par favoris">
+
+                    </form>
+                    {{/if}}
+                </th>
+            </tr>
+
+        </thead>
+        
+        <tbody>
+
+            {{#if listEmpty}}
+
+                <tr>
+                    <td colspan="4">Aucune décoration trouvée</td>
+                </tr>
+
+            {{else}}
+
+                {{#each listDecorations}}
+
+                    <tr>
+
+                        <td id="data-1"> <a href="/decorations/details?id={{this.decoration_id}}"> {{this.name}} </a> </td>
+                        <td id="data-2"> {{this.price}}€ </td>
+                        <td id="data-1"> Ajouté le<br>{{this.date_added}} </td>
+                        <td id="data-2"> 
+                            
+                            {{#if @root.session.user}}
+
+                            <form method="post" action="/decorations/favorite">
+
+                                <input name="decoration_id" type="hidden" value="{{this.decoration_id}}">
+                                <input name="page" type="hidden" value="catalogue">
+                            
+                                {{#if this.isFavorite}}
+
+                                    <input type="submit" style="background-image: url('/images/decorations/star.png');" id="favorite-button" value="">
+
+                                    {{else}}
+                                
+                                    <input type="submit" id="favorite-button" value="">
+
+                                {{/if}}
+
+                            </form>
+                            
+                            
+                            {{/if}}
+                        
+                        </td>       
+                    </tr>
+
+                {{/each}}
+
+            {{/if}}
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+
+</section>

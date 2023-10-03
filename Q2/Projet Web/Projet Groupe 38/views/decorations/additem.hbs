@@ -1,0 +1,68 @@
+<section>
+
+    <div class="background"></div>
+
+    <div id="decorations-additem">
+
+        <h3>Ajouter une décoration</h3>
+
+            <form method="post" action="/decorations/add" enctype="multipart/form-data">
+
+                <table>
+                    <tr>
+                        <td class="table-label">
+                            <label>Nom:</label>
+                        </td>
+                        <td class="table-input">
+                            <input type="text" name="name" placeholder="Nom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">
+                            <label>Prix:</label>
+                        </td>
+                        <td class="table-input">
+                            <input type="number" value="4.99" step="0.01" name="price" placeholder="Prix">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">
+                            <label>Image:</label>
+                        </td>
+                        <td class="table-input">
+                            <input type="file" name="picture" placeholder="Image">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">
+                            <label>Description:</label>
+                        </td>
+                        <td class="table-input">
+                            <textarea name="description" cols="30" rows="5" placeholder="insérez une description"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                    
+                <input id="submit" type="submit" value="Ajouter">
+                    
+                {{#if hasError}}
+
+                    <div class="error">
+
+                        <p>Erreur: {{{loginError}}}</p>
+
+                    </div>
+                    
+                {{/if}}
+
+            </form>
+      
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+
+</section>

@@ -1,0 +1,39 @@
+<section>
+
+    <form method="post" action="/users/login">
+
+        <p>
+            <label class="form-1">Login membre : </label>
+            <input class="form-1" type="text" name="login">
+        </p>
+
+        <p>
+            <label class="form-2">Password membre : </label>
+            <input class="form-2" type="password" name="password">
+        </p>
+
+        <p>
+            <input type="submit" value="Me connecter">
+        </p>
+
+    </form>
+
+    {{#if passwordError}}
+
+        <p class="red-div">Mot de passe incorrect</p>
+
+    {{/if}}
+
+    {{#if userError}}
+
+        <p class="red-div">Utilisateur inconnu</p>
+
+    {{/if}}
+
+    {{#if activeError}}
+
+        <p class="red-div">Compte désactivé</p>
+
+    {{/if}}
+
+</section>

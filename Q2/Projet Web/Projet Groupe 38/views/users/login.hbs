@@ -1,0 +1,40 @@
+<section>
+
+   
+    <div class="background"></div>
+
+    <div class="container">
+    <div class="userForm">
+        <h2>Connexion</h2>
+            <form method="post" action="/users/login">
+               <label class="label" for="email">Email:
+                  <input type="email" name="email" id="email" placeholder="Email">
+                </label>
+
+                <label class="label" for="password">Mot De Passe:
+                    <input type="password" name="password" id="password" placeholder="Mot de passe">
+                </label>
+                    <input class="submit" type="submit" value="Se connecter">
+                    {{#if hasError}}
+                    <div class="error">
+                        <p>Erreur: {{{loginError}}}</p>
+                    </div>
+                    {{/if}}
+
+            </form>
+      
+    </div>
+
+    <div>
+          <img class="userFormImg" src="/images/login.jpg" alt="login_picture">
+    </div>
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+
+
+</section>

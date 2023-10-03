@@ -1,0 +1,66 @@
+<section>
+    <div class="backgroundOrder"></div>
+
+    <div class="container align-items-center my-5">
+        <div class="row justify-content-start">
+    <div class="col">
+    <h1 class="ticketText">Vos tickets ouverts:</h1>
+    <table class="table table-striped table-bordered border-secondary-subtle bg-secondary-subtle">
+        <thead>
+            <th>Date</th>
+            <th>Sujet</th>
+        </thead>
+        <tbody>
+            {{#each tickets}}
+            {{#if this.is_open}}
+            <tr>
+                <td>{{this.opening_date}}</td>
+                <td><a href="/tickets/discussion?ticket_id={{this.ticket_id}}">{{this.topic}}</a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+    <h1 class="ticketText">Vos tickets fermés:</h1>
+    <table class="table table-striped table-bordered border-secondary-subtle bg-secondary-subtle">
+        <thead>
+            <th>Date</th>
+            <th>Sujet</th>
+        </thead>
+        <tbody>
+            {{#each tickets}}
+            {{#unless this.is_open}}
+            <tr>
+                <td>{{this.opening_date}}</td>
+                <td><a href="/tickets/discussion?ticket_id={{this.ticket_id}}">{{this.topic}}</a></td>
+            </tr>
+            {{/unless}}
+            {{/each}}
+        </tbody>
+    </table>
+        </div>
+
+    <div class="col-1"></div>
+
+    <div class="row justify-content-end">
+        <div class="bg-secondary-subtle">
+            <div class="col ">
+    <h1 class="ticketCreateTitle" >Créer un ticket:</h1>
+            <form method="post" action="/tickets/newticket">
+    <div><label>Sujet:</label>
+            <input type="text" name="topic"></div>
+    <div><label>Image (optionel):</label>
+            <input type="file" name="picture"></div>
+    <div><label>Message:</label></div>
+            <div><textarea class="ticketMessageForm" name="message"cols="30" rows="10"></textarea></div>
+    
+    <input class="bg-info createTicketButton" type="submit">
+   
+    </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>

@@ -1,0 +1,75 @@
+<section>
+    <div class="backgroundOrder"></div>
+
+{{#if isAdmin}}
+<div class="orderMenuAdmin">
+{{else}}
+<div class="orderMenu">
+{{/if}}
+    {{#unless isAdmin}}
+    <h1 class="orderTitle">Vos Commandes</h1>
+    {{else}}
+    <h1 class="orderTitle">Liste Des Commandes Client</h1>
+    {{/unless}}
+
+    <table class="orderTable">
+        <tr class="orderTh">
+
+            {{#if isAdmin}}
+            <td>Client</td>
+            {{/if}}
+            {{#unless isEmpty}}
+            <td class="orderId">Numéro<br>de commande</td>
+            <td class="orderDate">Date / heure</td>
+            <td>Statut</td>
+            {{/unless}}
+
+            {{#if isAdmin}}
+            <td>Changer<br>le statut</td>
+            {{/if}}
+
+        </tr>
+        {{#each orders}}
+            <tr>
+                {{#if @root.isAdmin}}
+                <td>{{this.firstname}}<br>{{this.lastname}}</td>
+                {{/if}}
+                <td class="orderId">{{this.order_id}}</td>
+                <td class="orderDate"><p>{{this.order_date}}</p></td>
+                <td>
+                    <div class="order order{{this.status}}">
+                        <p class="orderStatus">{{this.orderDisplay}}</p>
+                    </div>
+                </td>
+                {{#if @root.isAdmin}}
+                    <td>
+                        {{#unless this.isSent}}
+                            {{#if this.isPaid}}
+                                <form method="post" action="/orders/update">
+                                    <input class="orderSubmit orderSubmit{{this.status}}" type="submit" value='Mettre en "Envoyé"'>
+                                    <input type="hidden" name="orderId" value={{order_id}}>
+                                    <input type="hidden" name="status" value="sent">
+                                </form>
+                            {{else}}
+                                <form method="post" action="/orders/update">
+                                    <input class="orderSubmit orderSubmit{{this.status}}" type="submit" value='Mettre en "Payé"'>
+                                    <input type="hidden" name="orderId" value={{order_id}}>
+                                    <input type="hidden" name="status" value="paid">
+                                </form>
+                            {{/if}}
+                        {{/unless}}
+                    </td>
+                {{/if}}
+            </tr>
+        {{/each}}
+
+        {{#if isEmpty}}
+            <td colspan="3">
+                <p>Vous n'avez pas encore commandé de rideaux, elles seront affichées ici.</p>
+            </td>
+        {{/if}}
+    </table>
+    <br>
+</div>
+
+</section>

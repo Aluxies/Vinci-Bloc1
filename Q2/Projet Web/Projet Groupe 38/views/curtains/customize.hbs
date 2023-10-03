@@ -1,0 +1,59 @@
+<section>
+    <div class="backgroundCurtain"></div>
+
+    <div class="curtainDiv">
+        <h2>Mon Rideau Sur Mesure</h2>
+        <form class="curtain-form" method="GET" action="/curtains/quotation">
+                <h4>1) Je choisis mon Rideau</h4>
+                <p>Une liste détaillée est disponible ci-dessous</p>
+                <select id="curtainChoice" name="color">
+                    <option selected="selected">Choisir une option</option>
+                    {{#each curtains}}
+                    <option value="{{this.fabric_id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+
+
+
+            <div>
+                <h4>2) Je choisis les dimensions (en cm)</h4>
+                <input type="number" name="length" placeholder="Largeur" min="1">         
+                <input type="number" name="height" placeholder="Hauteur" min="1">
+            </div>
+
+        <input type="submit" value="Acheter">
+        </form>
+
+        {{#if hasError}}
+            <div class="error errorCurtain">
+                <p>Erreur: {{errorMessage}}</p>
+            </div>
+        {{/if}}
+    </div>
+
+    <div class="curtainTable">
+        <table id="table">
+            <tr>
+                <th colspan="4">Liste détaillée des tissus</th>
+            </tr>
+
+            <tr>
+                <td>Nom</td>
+                <td>Couleur</td>
+                <td>Prix</td>
+                <td>Description</td>
+            </tr>
+
+            {{#each curtains}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.color}}</td>
+                <td>{{this.price_per_square_meter}}€/m²</td>
+                <td>{{this.description}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    
+
+</section>

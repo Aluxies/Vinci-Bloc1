@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Recette - formulaire</title>
+    <link type="text/css" rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="logo">
+
+            <img src="images/logo.png" alt="logo">
+
+        </div>
+
+        <nav id="menu">
+
+            <a href="index.html">Accueil</a>
+
+            <a href="https://validator.w3.org/">Validateur HTML5</a>
+
+            <a href="https://jigsaw.w3.org/css-validator/">Validateur CSS3</a>
+            
+            <a href="https://moodle.vinci.be/my/">Moodle</a>
+            
+            <a href="form.html">Laissez un commentaire</a>
+
+        </nav>
+
+    </header>
+
+    <h1>
+        Envie de déposer un commentaire ?
+    </h1>
+    <p>
+        Vous pouvez à l'aide de ce formulaire entrez un commentaire ou une remarque sur la recette HTML.
+    </p>
+
+    <section id="section-commentaire">
+
+        <form action="trt.php" method="post">
+
+            <fieldset id="infos">
+
+                <legend>Informations personnelles :</legend>
+
+                Votre nom : <input class="text" type="text" name="nom" placeholder="Entrez ici votre nom"><br>
+
+                Votre prénom : <input class="text" type="text" name="prenom" placeholder="Entrez ici votre prénom"><br>
+
+                Votre email : <input class="text" type="text" name="email" placeholder="Entrez ici votre email"><br>
+
+            </fieldset>
+
+            <fieldset id="commentaire">
+
+                <legend>Commentaire</legend>
+
+                <textarea name="commentaire" placeholder="Entrez ici votre commentaire"></textarea>
+
+            </fieldset>
+
+            <input type="submit" value="Envoyer">
+
+        </form>
+
+
+    </section>
+
+    <footer>
+
+        Recette créée par Arnaud Alexis.
+        
+    </footer>
+    
+</body>
+</html>

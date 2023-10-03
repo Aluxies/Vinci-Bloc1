@@ -1,0 +1,58 @@
+<section>
+
+    <form method="post" action="/exoplanets/edit">
+
+        <input name="id" type="hidden" value="{{ID}}">
+
+        <p>
+            <label>ID Exoplanète : </label>
+            {{exoplanete.id}}
+        </p>
+        <p>
+            <label>Nom de l&rsquo;exoplanète : </label>
+            <input class="modifier-form-area" type="text" name="unique_name" value="{{exoplanete.uniqueName}}">
+        </p>
+        <p>
+            <label>Classe Habitable de l&rsquo;exoplanète : </label>
+            <select class="modifier-form-area" name="hclass">
+
+                <option value="Mésoplanète">Mésoplanète</option>
+                <option value="Hypopsychroplanète">Hypopsychroplanète</option>
+                <option value="Hyperthermoplanète">Hyperthermoplanète</option>
+                <option value="Psychroplanète">Psychroplanète</option>
+
+            </select>
+
+        </p>
+        <p>
+            <label>Année de découverte de l&rsquo;exoplanète : </label>
+            <input class="modifier-form-area" type="number" value="{{exoplanete.discoveryYear}}" name="discovery_year">
+        </p>
+        <p>
+            <label>IST de l&rsquo;exoplanète : </label>
+            <input class="modifier-form-area" name="ist" type="number" min="0" max="1" step="0.1" value="{{exoplanete.ist}}" name="ist">
+        </p>
+        <p>
+            <label>Classe de planète de l&rsquo;exoplanète : </label>
+            <select class="modifier-form-area" name="pclass">
+                
+                <option value="Terrienne chaude">Terrienne chaude</option>
+                <option value="Sous-terrienne chaude">Sous-terrienne chaude</option>
+                <option value="Super-terrienne chaude">Super-terrienne chaude</option>
+                <option value="Super-terrienne froide">Super-terrienne froide</option>
+                <option value="Neptunienne chaude">Neptunienne chaude</option>
+
+            </select>
+
+        </p>
+
+        <p>
+
+            <input type="submit" value="Mettre à jour">
+
+        </p>
+
+    </form>
+
+
+</section>

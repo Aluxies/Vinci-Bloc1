@@ -1,0 +1,54 @@
+<section>
+        
+    <div class="background"></div>
+
+    <div class="container">
+    <div class="userForm">
+        <h2>Créer un compte</h2>
+           <form method="post" action="/users/add">
+                    <div class="userFormNames">
+                <label for="lastname">Nom:
+                <input type="text" name="lastname" id="lastname" placeholder="Nom">
+                </label>
+
+                <label for="firstname">Prénom:
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom">
+                </label>
+                    </div>
+
+
+                <label class="label" for="email">Email:
+                <input type="email" name="email" id="email" placeholder="Email">
+                </label>
+
+                <label class="label" for="password">Mot de passe:
+                <input type="password" name="password" id="password" placeholder="Mot de passe">
+                </label>
+
+                <label class="label" for="passwordConfirmation">Confirmer le mot de passe:
+                <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Mot de passe">
+                </label>
+
+                <input class="submit" type="submit" value="Créer un compte">
+
+                    {{#if hasError}}
+                    <div class="error">
+                        <p>Erreur: {{{registerError}}}</p>
+                    </div>
+                    {{/if}}
+            </form>
+    </div>
+
+    <div>
+          <img class="userFormImg" src="/images/login.jpg" alt="register_picture">
+    </div>
+
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+
+</section>

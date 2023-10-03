@@ -1,0 +1,56 @@
+<section>
+
+    <form action="/users/add" method="post">
+
+        <p>
+            <label class="form-1">Nom : </label>
+            <input class="form-1" type="text" name="name">
+        </p>
+
+        <p>
+            <label class="form-1">Prénom : </label>
+            <input class="form-1" type="text" name="firstname">
+        </p>
+
+        <p>
+            <label class="form-1">Email : </label>
+            <input class="form-1" type="text" name="email">
+        </p>
+
+        <p>
+            <label class="form-1">Mot de passe : </label>
+            <input class="form-1" type="password" name="password">
+        </p>
+
+        <p>
+            <label class="form-1">Confirmation du mot de passe : </label>
+            <input class="form-1" type="password" name="passwordConfirmation">
+        </p>
+
+        <p>
+            <input type="submit">
+        </p>
+
+    </form>
+
+</section>
+
+{{#if tableErrors}}
+
+<section>
+
+    <h2> Erreurs : </h2>
+
+    <ul>
+        
+        {{#each tableErrors}}
+
+            <li class="red-div">{{this}}</li>
+
+        {{/each}}
+
+    </ul>
+
+</section>
+
+{{/if}}

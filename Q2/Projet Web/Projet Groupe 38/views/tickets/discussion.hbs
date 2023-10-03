@@ -1,0 +1,48 @@
+<section>
+    
+    <h1>Sujet: {{ticket.topic}}</h1>
+    <div class="op">
+      {{#if session.isAdmin}}
+    <form action="/tickets/discussion/close" method="post">
+    <input type="hidden" name="ticket_id" value="{{ticket.ticket_id}}">
+    <input class="closeTicket" type="submit" value="Fermer le ticket"></form>
+    {{/if}}
+    {{#if ticket.picture}}
+    <img class="ticketImage" src="/images{{ticket.picture}}" alt="ticket_picture">
+    {{/if}}
+    
+    </div>
+  
+  
+    <div class="container">
+      <div class="row align-items-center">
+
+    <table class="tableDiscussion">
+
+    {{#each messages}}
+    <tr>
+    {{#if (eq ../ticket.user_id this.user_id)}}
+    <td></td>
+    <td class="bg-secondary-subtle rounded-1 discussion">{{this.message}}</td>
+    {{else}}
+    <td class="bg-primary-subtle rounded-1 discussion">{{this.message}}</td>    
+    <td></td>
+    
+    {{/if}}
+    </tr>
+    {{/each}}
+    </table>
+
+      
+    {{#if ticket.is_open}}
+    <div class="sendMessage">
+    <form action="/tickets/discussion/sendmessage" method="post">
+    <input type="textarea" name= "message" placeholder="Écrire un message">
+    <input type="hidden" name="ticket_id" value={{ticket.ticket_id}}>
+    <input type="submit" class="sendMessageButton"></form>
+    </div>
+    {{/if}}
+      </div>
+    </div>
+
+</section>

@@ -1,0 +1,22 @@
+<section>
+<div class="backgroundOrder"></div>
+
+    <div class="container align-items-center" >
+    <div class="row justify-content-center">
+    <h1 class="ticketText">Gestionnaire des tickets</h1>
+    <table class="table table-bordered border-secondary-subtle text-center bg-secondary-subtle">
+        <thead>
+        </thead>
+        <tbody>   
+            {{#each tickets}}
+            <tr>
+                {{#if this.is_open}}
+                <td><a href="/tickets/discussion?ticket_id={{this.ticket_id}}">{{this.topic}}</a></td>
+                {{/if}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+    </div>
+</section>

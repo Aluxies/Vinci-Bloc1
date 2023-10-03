@@ -1,0 +1,68 @@
+<section>
+
+    <h1>Page admin</h1>
+
+    <table class="table-admin">
+
+        <thead>
+
+            <tr>
+                <td>Id utilisateur</td>
+                <td>Nom utilisateur</td>
+                <td>Prénom utilisateur</td>
+                <td>Email utilisateur</td>
+                <td>Admin ?</td>
+                <td>Compte actif ?</td>
+                <td></td>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            {{#each users}}
+                <tr>
+                    <td>{{this.user_id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.firstname}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.admin}}</td>
+                    <td>{{this.active}}</td>
+                    <td>
+                        {{#if this.admin}}
+
+                        {{else}}
+
+                            {{#if this.active}}
+
+                                <form action="/admin/desactivate" method="post">
+
+                                    <input type="hidden" value="{{this.email}}" name="email">
+
+                                    <input type="submit" value="Désactiver le compte">
+
+                                </form>
+
+                            {{else}}
+
+                                <form action="/admin/activate" method="post">
+
+                                    <input type="hidden" value="{{this.email}}" name="email">
+                                    
+                                    <input type="submit" value="Activer le compte">
+
+                                </form>
+
+                            {{/if}}
+            
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+
+        </tbody>
+
+    </table>
+
+</section>

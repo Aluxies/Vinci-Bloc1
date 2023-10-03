@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>ParcInfo</title>
+        <link type="text/css" rel="stylesheet" href="styles/style.css">
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <div id="banniere">
+
+                <img id="computer" src="/images/computer.jpg" alt="computer">
+                <img id="logo" src="/images/logo.png" alt="logo">
+
+            </div>
+
+            <nav id="menu">
+
+                <a href="index.html">Accueil - Liste des incidents</a>
+                <a href="form.html">Signaler un incident</a>
+
+            </nav>
+
+
+        </header>
+
+        <div id="form-texte">
+
+            <p>Vous pouvez à l'aide de ce formulaire signaler un incident.</p>
+
+        </div>
+        
+        <section id="signaler-incident">
+
+            <form action="trt.php" method="post">
+
+                <fieldset id="infos">
+
+                    <div id="infos-gauche">
+                        
+                        Informations personnelles :<br>
+    
+                        <span class="titre-input">Votre nom :</span><input type="text" name="nom" placeholder="Entrez ici votre nom"><br>
+    
+                        <span class="titre-input">Votre prénom :</span><input type="text" name="prenom" placeholder="Entrez ici votre prénom"><br>
+    
+                        <span class="titre-input">Votre email :</span><input type="text" name="email" placeholder="Entrez ici votre email"><br>
+    
+                        <span class="titre-input">Votre section :</span><select><option value="">Informatique</option></select>
+
+
+                    </div>
+
+                    <div id="infos-droite">
+
+                        <span class="titre-input">Date de l'incident :</span><input type="text" name="date"><br>
+
+                        <span class="titre-input">Photo de l'incident :</span><input type="file" name="photo"><br>
+                    
+                    </div>
+                    
+                </fieldset>
+    
+                <fieldset id="commentaire">
+    
+                    <legend>Résumé du problème :</legend>
+    
+                    <textarea name="commentaire" placeholder="Entrez ici l'incident"></textarea>
+    
+                </fieldset>
+    
+                <input type="submit" value="Envoyer">
+    
+            </form>
+
+        </section>
+
+        <footer>
+
+            Design by Arnaud Alexis
+            
+        </footer>
+    
+    </body>
+
+</html>

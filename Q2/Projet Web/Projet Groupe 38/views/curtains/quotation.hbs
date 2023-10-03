@@ -1,0 +1,38 @@
+<section>
+    <div class="backgroundCurtain"></div>
+
+
+   <div class="curtainQuotation">
+        <h3>Résumé de votre commande</h3>
+        
+            <h4>Tissu: </h4>
+            <p class="curtainQuotationColor">{{curtain.name}}</p>
+
+            <h4>Couleur:</h4>
+            <p class="curtainQuotationColor">{{curtain.color}}</p>
+
+
+        <div>
+            <h4>Dimensions:</h4>
+
+            <div class="curtainQuotationSize">
+            <p>Longueur: {{query.length}}cm</p>
+            <p>Largeur: {{query.height}}cm</p>
+            </div>
+
+            <h3>Prix total: {{price}}€</h3>
+
+        </div>
+        {{#if session.user}}
+        <form method="post" action="/curtains/order">
+            <input class="curtainQuotationOrder" type="submit" value="Placer une commande">
+            <input type="hidden" value={{price}} name="price">
+            <input type="hidden" value={{query.length}} name="curtain_length">
+            <input type="hidden" value={{query.length}} name="curtain_height">
+            <input type="hidden" value={{curtain.fabric_id}} name="fabric">
+        </form>
+        {{/if}}
+   </div>
+
+
+</section>

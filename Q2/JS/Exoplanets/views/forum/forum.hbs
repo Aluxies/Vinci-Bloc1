@@ -1,0 +1,72 @@
+<section>
+
+    <h2 class="titre-exoplanetes"> Forum de discussion</h2>
+
+    <table class="table-exoplanetes">
+
+        <thead>
+
+            <tr>
+                <th>Id message</th>
+                <th>Message</th>
+                <th>Auteur</th>
+                <th>Nb de likes</th>
+                <th>Envie de liker ?</th>
+
+            </tr>
+
+        </thead>
+        
+        <tbody>
+
+            {{#each listMessages}}
+
+                <form method="post" action="/forum/like">
+
+                    <input type="hidden" name="id" value="{{this.id}}">
+
+                    <tr>
+
+                        <td> {{this.id}} </td>
+                        <td> {{this.message}} </td>
+                        <td> {{this.author}} </td>
+                        <td> {{this.nb_likes}} </td>
+                        <td> <input type="submit" value="LIKER"> </td>
+
+                    </tr>
+                
+                </form>
+
+            {{/each}}
+
+        </tbody>
+
+    </table>
+
+    <h2 class="titre-exoplanetes"> Laissez un message</h2>
+
+    <form class="form-exoplanetes" method="post" action="/forum/addmessage">
+
+        <p>
+
+            <label>Message : </label>
+            <textarea name="message"></textarea>
+
+        </p>
+
+        <p>
+
+            <label>Auteur : </label>
+            <input type="text" name="author">
+
+        </p>
+
+        <p>
+
+            <input type="submit" value="envoyer">
+
+        </p>
+        
+    </form>
+
+</section>

@@ -1,0 +1,19 @@
+Exemple d'affichaqe d'une boisson :
+Jus d'oranges press�es (20 cl) � 4.0 euros
+Exemple d'affichage d'une boisson alcoolis�e : 
+Bloody Mary (12 cl) � 9.0 euros (degr� d'alcool : 14.0�)
+Exemple d'affichage des bi�res : 
+Bi�re en bouteille : Orval (33 cl) � 4.0 euros (degr� d'alcool : 6.2�)
+Bi�re pression : Jupiler (33 cl) � 2.5 euros (degr� d'alcool : 5.2�)
+Exemple d'affichage d'un vin :
+Vin blanc : Chablis premier cru 2017 (15 cl) � 6.5 euros (degr� d'alcool : 13.5�)
+C�page : chardonnay
+Origine : Bourgogne - France
+Test de l'exception en cas de couleur null : 
+La couleur doit �tre choisie parmi les valeurs suivantes : rouge, blanc, ros�
+Test de l'exception en cas de couleur invalide non null : 
+La couleur doit �tre choisie parmi les valeurs suivantes : rouge, blanc, ros�
+Test de l'�galit� de deux boissons : 
+jus1.equals(jus2) : true
+jus1.equals(jus3) : false
+jus1.equals(jus3) : false
