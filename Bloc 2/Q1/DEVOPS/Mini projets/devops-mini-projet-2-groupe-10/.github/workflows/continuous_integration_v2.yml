@@ -1,0 +1,43 @@
+name: pipelineProject2
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - closed
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: install dependencies      
+      run: npm install
+    - name: print date start pipeline
+      run: date "+heure start pipeline %H:%M:%S"
+    - name: check format code with prettier
+      run: npm run prettier
+    - name: check code with lint
+      run: npm run lint
+    - name: test code with jest
+      run: npm run test
+    - name: build application  
+      run: npm run build  
+    - name: print date end pipeline
+      run: date "+heure end pipeline %H:%M:%S"
+    - name: print succes message
+      run: echo "PIPELINE SUCCESS WITHOUT ERRORS" 
+      
+       
+   
