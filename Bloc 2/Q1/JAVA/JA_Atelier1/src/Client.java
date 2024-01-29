@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class Client {
+    private static int numeroSuivant = 1;
+    private ArrayList<Commande> commandesPassees;
+    private Commande commandeEnCours;
+    private int numero;
+    private String nom;
+    private String prenom;
+    private String telephone;
+
+    public Client(String nom, String prenom, String telephone) {
+
+        if ( nom == null ) throw new IllegalArgumentException( "L'objet 'nom' ne peut être 'null'." );
+        if ( nom.equals( " " ) ) throw new IllegalArgumentException( "L'objet 'nom' ne peut être égal à 'blanc'." );
+        if ( prenom == null ) throw new IllegalArgumentException( "L'objet 'prenom' ne peut être 'null'." );
+        if ( prenom.equals( " " ) ) throw new IllegalArgumentException( "L'objet 'prenom' ne peut être égal à 'blanc'." );
+        if ( telephone == null ) throw new IllegalArgumentException( "L'objet 'telephone' ne peut être 'null'." );
+        if ( telephone.equals( " " ) ) throw new IllegalArgumentException( "L'objet 'telephone' ne peut être égal à 'blanc'." );
+
+        this.commandesPassees = new ArrayList<Commande>();
+        this.numero = numeroSuivant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+
+        numeroSuivant++;
+
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return numero == client.numero;
+    }
+
+    public Commande getCommandeEnCours() {
+        return commandeEnCours;
+    }
+
+    public boolean enregistrer( Commande commande ){
+
+        if ( commande == null ) throw new IllegalArgumentException( "L'objet 'commande' ne peut être 'null'." );
+
+        if ( this.commandesPassees.contains( commande ) ) return false;
+        if ( this.commandeEnCours != null ) return false;
+        if ( commande.getClient() != this ) return false;
+
+        this.commandeEnCours = commande;
+        return true;
+
+    }
+
+    public boolean cloturerCommandeEnCours(){
+
+        if ( this.commandeEnCours == null ) return false;
+
+        this.commandesPassees.add( this.commandeEnCours );
+        this.commandeEnCours = null;
+        return true;
+
+    }
+
+    public String commandesPassees () {
+
+        if ( commandesPassees.isEmpty() ) return "Aucune commande passée";
+
+        String string = "";
+
+        for ( Commande commandePassee : commandesPassees ) {
+
+            string += commandePassee;
+
+        }
+
+        return string;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numero);
+    }
+
+    @Override
+    public String toString() {
+        return "client n° " + numero + " (" + prenom  + " " + nom + ", telephone : " + telephone +")";
+    }
+
+}
